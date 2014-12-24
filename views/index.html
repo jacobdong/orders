@@ -1,0 +1,123 @@
+<html ng-app="app">
+    <head>
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="/bower_components/font-awsome/css/font-awesome.css">
+        <link rel="stylesheet" href="/public/stylesheets/style.css">
+
+    </head>
+    <body>
+        <div ng-controller="ctrl2">
+            <div ng-repeat="user in users"></div>
+        </div>
+        <nav class="navbar navbar-inverse" role="navigation">
+
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" style="color:#fff">
+                  JXL订餐系统
+                <span class="badge">v0.0.1</span>
+                  
+              </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" >
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">少林藏经阁</a></li>
+                <li class="active"><a href="#">练功狂人榜</a></li>
+                
+              </ul>
+
+              <ul class="nav navbar-nav pull-right" >
+                  
+                  <li class="pull-right"><a href="#" style="color:#fff">员工总数&nbsp;&nbsp;<span class="badge">37</span></a></li>
+                  <li class="pull-right"><a href="#" style="color:#fff">{{__root.currentTime | date:"yyyy-MM-dd HH:mm:ss"}}</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+
+            
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container" ng-controller="ctrl2">
+            <div class="row">
+                <div class="col-md-6">
+                    <div  class="col-md-12 list-group" style="height:230px;">
+                        <div>
+                            <input type="text" class="form-control" placeHolder="快速查找">
+                        </div>
+                        <a class="col-md-12 list-group-item list-group-item-info" href="JavaScript:void(0)">
+                            不加班不高兴
+                            <span class="badge">14 人</span>
+                        </a>
+                        <div class="col-md-12 list-group-item" ng-repeat="user in users" style="cursor:pointer">
+                            <div class="col-md-4">
+                                
+                            <i class="fa fa-user" style="margin-right:5px;"></i>
+                                <strong>{{user.name}}</strong>
+                            </div>
+                            <div class="col-md-6 col-md-offset-2">
+                                <div class="col-md-5">
+                                    <button class="dropdown-toggle btn btn-primary btn-xs" data-toggle="dropdown">
+                                        随便吃点
+                                        <i class="fa fa-arrow-down" style="margin-left:5px;"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="">鱼香肉丝</a>
+                                        </li>
+                                        <li>
+                                            <a href="">宫保鸡丁</a>
+                                        </li>
+                                        <li>
+                                            <a href="">鱼香肉丝</a>
+                                        </li>
+                                        <li>
+                                            <a href="">鱼香肉丝</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <button class="dropdown-toggle btn btn-danger btn-xs" data-toggle="dropdown">
+                                        取消订餐
+                                        <i class="fa fa-arrow-right" style="margin-left:5px;"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>    
+                </div>
+                
+                <div class="col-md-6">
+                    <div  class=" list-group">
+                        <div>
+                            <input type="text" class="form-control" placeHolder="快速查找">
+                        </div>
+                        <a class="list-group-item list-group-item-danger" href="JavaScript:void(0)">
+                            我有事要先走！
+                            <span class="badge">14 人</span>
+                        </a>
+                        <a class="list-group-item" ng-repeat="user in users">{{user.name}} <span class="text-danger">-_-!!!</span></a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/public/javascripts/app.js"></script>
+    <script type="text/javascript" src="/public/javascripts/constant/users.js"></script> 
+</html>
