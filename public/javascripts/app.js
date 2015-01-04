@@ -19,20 +19,24 @@ angular.module('app').config(function(__users){
 
 
 
-angular.module('app').controller('ctrl1', ['$scope','__users',function ($scope,__users) {
+angular.module('app').controller('ctrl1', ['$scope','__foods','__users',function ($scope,__foods,__users) {
     $scope.users = __users;
-    console.log(__users);
-}])
+    $scope.foods = __foods;
 
-angular.module('app').controller('ctrl2', function ($scope,__users) {
-    $scope.users = __users;
     var vm = $scope.vm = {};
+
     
     vm.selectedOrder = function(){
         
     }
 
+    console.log(__users);
+    console.log(__foods);
+}])
 
+angular.module('app').controller('ctrl2', function ($scope,__users) {
+    $scope.users = __users;
+    
 
     console.log(__users);
 
